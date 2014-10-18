@@ -1,0 +1,94 @@
+
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--<link rel="stylesheet" type="text/css" href="css/style.css"/>
+      <script type="text/javascript" src="js/scripts.js"></script>-->
+      <title>GESTION CLIENTES</title>
+      <style type="text/css">
+
+.Estilo1 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+      .Estilo3 {
+	font-size: 24px;
+	font-weight: bold;
+}
+      </style>
+</head>
+   <body>
+      <div class="contenedor">
+         <table width=950px >
+            <tr>
+               <td>
+                  <div class="titulo Estilo3">
+                     Modificar Clientes</div><br>              </td>
+              
+            </tr>
+         </table>
+		   
+     
+<form action='' method='POST' name='formAgregarCliente'>
+
+<span class="Estilo1">Datos Personales</span> <br><br>
+
+<table name='datos-personales' border='1' width=100%>
+  <tr>
+    <td width="11%" height="40">Rut Cliente </td>
+    <td width="44%"><input tipe='text' name='rut_cliente' size='35'>
+        <span class="ejemplos">(12.345.678-9)</span></td>
+    <td width="9%">Telefono</td>
+    <td width="36%"><input tipe='text' name='fono_cliente' size='30'>
+        <span class="ejemplos"> (09 12345678)</span></td>
+  </tr>
+  <tr>
+    <td height="42">Nombre</td>
+    <td><input tipe='text' name='nombre_cliente' size='65'></td>
+	  <td width="9%">Mail</td>
+      <td width="36%"><input tipe='text' name='mail_cliente' size='50'></td>
+  </tr>
+  <tr>
+    <td height="42">Direccion</td>
+    <td colspan='3'><input tipe='text' name='direccion_cliente' size='75'>
+        <span class="ejemplos"> (Villa La Paz, Pasaje b, casa #123, Curico.)</span></td>
+  </tr>
+</table>
+<br><br>
+<span class="Estilo1">Otros Datos </span><br>
+<br>
+<table name='afiliaciones' Width=100% border='1'>
+
+  <tr>
+  <td width="89" height="40">Fecha de Alta </td>
+      <td width="241"><input tipe='text' name='fono' size='18'>  
+      <span class="ejemplos"> (01/01/2014)</span></td>
+  
+      <td width='124'>Cliente Activo </td>
+    <td width='156'><select name='activo'>
+      <option value=1>Activo</option>
+      <option value=2>Desactivo</option>
+     
+    </select></td>
+    <td width='96'>Fiabilidad</td>
+    <td width='160'><select name='fiabilidad'>
+      <option value=0>Buena</option>
+      <option value=1>Regular</option>
+      <option value=2>Mala</option>
+      </select></td>
+  </tr>
+</table>
+<p><br>
+      <input type="button" name='actualizar' value='Actualizar' onClick="actualizar_cliente()"> 
+    <input type='button' name='eliminar' value='Eliminar' onClick="eliminar_cliente()">
+  </div>
+</p>
+</form>
+
+            </div>
+                   
+         </div>
+      </div>
+   </body>
+</html>
