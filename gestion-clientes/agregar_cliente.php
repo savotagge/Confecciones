@@ -1,6 +1,6 @@
 <?php include("../conn/conn.php");
-
-//if(isset($_POST['rut'], $_POST['nombre'], $_POST['direccion'], $_POST['fono'], $_POST['cargo'], $_POST['afp'], $_POST['salud'], $_POST['cuenta'], $_POST['tipo_cuenta'], $_POST['banco'], $_POST['sucursal'])) {
+//se revisa que las variables han sido declaradas
+if(isset($_POST['rut_cliente'], $_POST['nombre_cliente'], $_POST['direccion_cliente'], $_POST['fono_cliente'], $_POST['mail_cliente'], $_POST['fiabilidad_cliente'], $_POST['status_cliente'])) {
 
 //ASIGNACION DE VARIABLES con los datos enviados desde el formulario
 $RUT_CLIENTE=$_POST['rut_cliente'];
@@ -16,4 +16,7 @@ $ACTIVO=$_POST['status_cliente'];
 $result=mysql_query(("INSERT INTO `CONFECCIONES`.`CLIENTES` (`RUT_CLIENTE`, `NOMBRE_CLIENTE`, `DIRECCION_CLIENTE`, `FECHA_ALTA`, `FONO_CLIENTE`, `MAIL_CLIENTE`, `FIABILIDAD_CLIENTE`, `ACTIVO`) VALUES ('$RUT_CLIENTE', '$NOMBRE_CLIENTE', '$DIRECCION_CLIENTE', '$FECHA_ALTA', '$FONO_CLIENTE', '$MAIL_CLIENTE', '$FIABILIDAD_CLIENTE', '$ACTIVO')"),$link);
 
 echo "Agregado!";
-//}
+}else{
+
+	echo "Acceso no autorizado";
+}
