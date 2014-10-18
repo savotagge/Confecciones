@@ -1,7 +1,7 @@
 <?php
 function connect(){
 //Llama al archivo de configuracion ubicado en un directorio distinto al del sitio web, los datos estan en un archivo oculto llamado ".config.ini"
-$db_conf=parse_ini_file('/home/fernando/Conf-confecciones/conf.ini', true); 
+$db_conf=parse_ini_file('../Conf-confecciones/conf.ini', true); 
 //Los datos son almacenados como un array multidimencional, abajo se asignan las variables. 
 $host=$db_conf['database']['db.config.host']; //nombre del servidor
 $user=$db_conf['database']['db.config.user']; //nombre de usuario de la base de datos
