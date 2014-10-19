@@ -1,19 +1,63 @@
-function Validar_form_Agregar_Cliente{
+function Limpiar_form_Agregar_Cliente(){
+
+document.formAgregarCliente.reset()
+
+}
+
+function Validar_form_Agregar_Cliente(){ //esta funcion validara el formulario de ingreso de clientes a la base de datos
 
 var rut=document.formAgregarCliente.rut_cliente.value
 var nombre=document.formAgregarCliente.nombre_cliente.value
 var direccion=document.formAgregarCliente.direccion_cliente.value
 var fono=document.formAgregarCliente.fono_cliente.value
 var mail=document.formAgregarCliente.mail_cliente.value
-var fiabilidad=document.formAgregarCliente.fiabilidad_cliente.value
+
 
 //Validad si los campos han sido enviados vacios
-
-//valido todos los campos
-    if (rut==0 && nombre==0 && direccion==0 && fono==0 && mail==0 && fiabilidad==0){
+if (rut=="" && nombre=="" && direccion=="" && fono=="" && mail==""){
     alert("Debe llenar todos los campos")
     document.formAgregarCliente.rut_cliente.focus()
-    return "0";
+    return "0";}
+
+    if (rut==""){
+    alert("Debe ingresar el Rut del cliente")
+    document.formAgregarCliente.rut_cliente.focus()
+    return "0";}
+    //se valida el formato del rut
+    expr_rut = /^([0-9]{1,2}\.[1-9]{3}\.[1-9]{3}\-[0-9kK])+$/
+    if ( !expr_rut.test(rut) ){
+        alert("Error: El Rut: " + rut + " es incorrecto, verifique el ejemplo.")
+        document.formAgregarCliente.rut_cliente.focus()
+    return "0";}
+
+    if (nombre==""){
+    alert("Debe ingresar el Nombre del cliente")
+    document.formAgregarCliente.nombre_cliente.focus()
+    return "0";}
+
+    if (direccion==""){
+    alert("Debe ingresar la Dirección del cliente")
+    document.formAgregarCliente.direccion_cliente.focus()
+    return "0";}
+
+    if (fono==""){
+    alert("Debe ingresar el Telefono del cliente")
+    document.formAgregarCliente.fono_cliente.focus()
+    return "0";}
+
+    if (mail==""){
+    alert("Debe ingresar el Mail del cliente")
+    document.formAgregarCliente.mail_cliente.focus()
+    return "0";}
+
+    //se valida el formato de correo electronico
+	 expr_mail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+    if ( !expr_mail.test(mail) ){
+        alert("Error: La dirección de correo " + mail + " es incorrecta.")
+        document.formAgregarCliente.mail_cliente.focus()
+    return "0";}
+    
+alert("Completo");
 
 
 

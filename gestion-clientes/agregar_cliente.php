@@ -1,6 +1,6 @@
 <?php include("../conn/conn.php");
 //se revisa que las variables han sido declaradas
-if(isset($_POST['rut_cliente'], $_POST['nombre_cliente'], $_POST['direccion_cliente'], $_POST['fono_cliente'], $_POST['mail_cliente'], $_POST['fiabilidad_cliente'], $_POST['status_cliente'])) {
+if(isset($_POST['rut_cliente'], $_POST['nombre_cliente'], $_POST['direccion_cliente'], $_POST['fono_cliente'], $_POST['mail_cliente'])) {
 
 //ASIGNACION DE VARIABLES con los datos enviados desde el formulario
 $RUT_CLIENTE=$_POST['rut_cliente'];
@@ -9,7 +9,6 @@ $DIRECCION_CLIENTE=$_POST['direccion_cliente'];
 $FECHA_ALTA=strftime("%Y/%m/%d");
 $FONO_CLIENTE=$_POST['fono_cliente'];
 $MAIL_CLIENTE=$_POST['mail_cliente'];
-$FIABILIDAD_CLIENTE=$_POST['fiabilidad_cliente'];
 $ACTIVO=0;
 
 //se guarda en la base de datos
