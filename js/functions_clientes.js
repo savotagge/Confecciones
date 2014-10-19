@@ -57,7 +57,7 @@ if (rut=="" && nombre=="" && direccion=="" && fono=="" && mail==""){
         document.formAgregarCliente.mail_cliente.focus()
     return "0";}
     
-alert("Completo");
+document.formAgregarCliente.submit()
 
 
 
