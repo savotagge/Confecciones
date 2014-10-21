@@ -5,11 +5,12 @@ $RESULT=mysql_query("SELECT RUT_CLIENTE as RUT, NOMBRE_CLIENTE as NOMBRE, FIABIL
 //se obtiene el numero de resultados
 $NU=mysql_num_rows($RESULT);
 if($NU==0){ 
-echo '<center>Sin datos</center>';
+echo 'Sin datos';
 }else{
 $MOSTRAR_CLIENTES="";
 //se obtiene el numero de cabeceras de columnas (campos) de la busqueda
 $NUMERO_CAMPO=mysql_num_fields($RESULT);
+$MOSTRAR_CLIENTES.="<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>";
 $MOSTRAR_CLIENTES.="<table align='center' border=1>";
 $MOSTRAR_CLIENTES.="<tr>";
 for($NC=0;$NC<$NUMERO_CAMPO;$NC++){
