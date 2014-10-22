@@ -5,7 +5,7 @@ $RESULT=mysql_query("SELECT RUT_CLIENTE as RUT, NOMBRE_CLIENTE as NOMBRE, FIABIL
 //se obtiene el numero de resultados
 $NU=mysql_num_rows($RESULT);
 if($NU==0){ 
-echo 'Sin datos';
+echo 'No existen clientes';
 }else{
 $MOSTRAR_CLIENTES="";
 //se obtiene el numero de cabeceras de columnas (campos) de la busqueda
