@@ -19,7 +19,7 @@ $NOTAS=$_POST['notas'];
 
 $RESULT=mysql_query(("UPDATE CLIENTES SET NOMBRE_CLIENTE='$NOMBRE_CLIENTE',DIRECCION_CLIENTE='$DIRECCION_CLIENTE',FONO_CLIENTE='$FONO_CLIENTE',MAIL_CLIENTE='$MAIL_CLIENTE',FIABILIDAD_CLIENTE='$FIABILIDAD',ACTIVO='$ACTIVO',NOTAS='$NOTAS' WHERE RUT_CLIENTE like '$RUT_CLIENTE'"),$link);
 
-echo "Datos actualizados actualizados correctamente!";
+echo "Datos actualizados correctamente!";
 }else{
 
 	echo "Acceso no autorizado";

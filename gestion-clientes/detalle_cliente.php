@@ -35,7 +35,7 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
             <tr>
                <td>
                   <div class="titulo Estilo3">
-                     Detalles Cliente</div><br>              </td>
+                     Detalle Cliente</div><br>              </td>
               
             </tr>
          </table>

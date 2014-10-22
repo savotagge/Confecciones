@@ -110,13 +110,6 @@ if (nombre=="" && direccion=="" && fono=="" && mail==""){
     		return false;
     	}
 
-
-
-
-
-
-
-
 }
 
 function Eliminar_Cliente(){
