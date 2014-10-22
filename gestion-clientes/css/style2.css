@@ -1,0 +1,41 @@
+body {
+   background: rgba(212,228,239,1);
+background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(12,14,15,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(100%, rgba(12,14,15,1)));
+background: -webkit-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(12,14,15,1) 100%);
+background: -o-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(12,14,15,1) 100%);
+background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(12,14,15,1) 100%);
+background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(12,14,15,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#0c0e0f', GradientType=1 );
+
+}
+ 
+ 
+.contenedor{
+    width: 1150px;
+    margin: auto;    
+  background: rgba(255,255,255,1);
+background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(203,206,207,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(203,206,207,1)));
+background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(203,206,207,1) 100%);
+background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(203,206,207,1) 100%);
+background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(203,206,207,1) 100%);
+background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(203,206,207,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cbcecf', GradientType=1 );
+
+    background-position:bottom;
+    color: black;
+    padding: 30px 50px 50px 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 38px 36px 25px 5px rgba(0,0,0,0.75);
+-moz-box-shadow: 38px 36px 25px 5px rgba(0,0,0,0.75);
+box-shadow: 38px 36px 25px 5px rgba(0,0,0,0.75);
+}
+
+.contenedor .titulo{
+    font-size: 4.5ex;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
