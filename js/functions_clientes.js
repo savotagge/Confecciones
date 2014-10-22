@@ -58,6 +58,57 @@ if (rut=="" && nombre=="" && direccion=="" && fono=="" && mail==""){
     return "0";}
     
 document.formAgregarCliente.submit()
+}
+
+function Validar_form_Actualizar_Cliente(){ //esta funcion validara el formulario de ingreso de clientes a la base de datos
+
+
+var nombre=document.formDetalleCliente.nombre_cliente.value
+var direccion=document.formDetalleCliente.direccion_cliente.value
+var fono=document.formDetalleCliente.fono_cliente.value
+var mail=document.formDetalleCliente.mail_cliente.value
+
+
+//Validad si los campos han sido enviados vacios
+if (nombre=="" && direccion=="" && fono=="" && mail==""){
+    alert("Debe llenar todos los campos")
+    document.formDetalleCliente.nombre_cliente.focus()
+    return "0";}
+
+    if (nombre==""){
+    alert("Debe ingresar el Nombre del cliente")
+    document.formDetalleCliente.nombre_cliente.focus()
+    return "0";}
+
+    if (direccion==""){
+    alert("Debe ingresar la Dirección del cliente")
+    document.formDetalleCliente.direccion_cliente.focus()
+    return "0";}
+
+    if (fono==""){
+    alert("Debe ingresar el Telefono del cliente")
+    document.formDetalleCliente.fono_cliente.focus()
+    return "0";}
+
+    if (mail==""){
+    alert("Debe ingresar el Mail del cliente")
+    document.formDetalleCliente.mail_cliente.focus()
+    return "0";}
+
+    //se valida el formato de correo electronico
+	 expr_mail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+    if ( !expr_mail.test(mail) ){
+        alert("Error: La dirección de correo " + mail + " es incorrecta.")
+        document.formDetalleCliente.mail_cliente.focus()
+    return "0";}
+   
+    	//se pide confirmacion antes de actualizar los datos de un cliente
+    	if(confirm('¿Esta seguro de guardar los cambios?')){
+
+    		document.formDetalleCliente.submit()
+    	}else{
+    		return false;
+    	}
 
 
 
@@ -65,4 +116,10 @@ document.formAgregarCliente.submit()
 
 
 
+
+}
+
+function Eliminar_Cliente(){
+
+	alert("Eliminar");
 }
