@@ -9,14 +9,12 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
 	//Se va a buscar a la base de datos los datos del cliente seleccionado
     $RESULT=mysql_query("SELECT * from CLIENTES where RUT_CLIENTE like '$RUT'",$link);
     while($ROW=mysql_fetch_array($RESULT)){
-    //echo "Nombre: <input type='text' value=".$ROW['NOMBRE_CLIENTE']."><br><br>";
-    //echo "Rut: <input type='text' value=".$ROW['RUT_CLIENTE'].">";
+    
 ?>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <!--<link rel="stylesheet" type="text/css" href="css/style.css"/>
-      <script type="text/javascript" src="js/scripts.js"></script>-->
+      <script type="text/javascript" src="../js/functions_clientes.js"></script>
       <title>GESTION CLIENTES</title>
       <style type="text/css">
 
@@ -37,20 +35,20 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
             <tr>
                <td>
                   <div class="titulo Estilo3">
-                     Modificar Clientes</div><br>              </td>
+                     Detalles Cliente</div><br>              </td>
               
             </tr>
          </table>
 		   
      
-<form action='' method='POST' name='formAgregarCliente'>
+<form action='actualizar_cliente.php' method='POST' name='formDetalleCliente'>
 
 <span class="Estilo1">Datos Personales</span> <br><br>
 
 <table name='datos-personales' border='1' width=100%>
   <tr>
     <td width="11%" height="40">Rut Cliente </td>
-    <td width="44%"><input tipe='text' name='rut_cliente' value="<?php echo $ROW['RUT_CLIENTE'] ?>" size='35' disabled>
+    <td width="44%"><input tipe='text' name='rut_cliente' value="<?php echo $ROW['RUT_CLIENTE'] ?>" size='35' readonly="readonly">
     </td>
     <td width="9%">Telefono</td>
     <td width="36%"><input tipe='text' name='fono_cliente' value="<?php echo $ROW['FONO_CLIENTE'] ?>" size='30'>
@@ -75,13 +73,11 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
 
   <tr>
   <td width="89" height="40">Fecha de Alta </td>
-      <td width="241"><input tipe='text' name='fono' value="<?php echo $ROW['FECHA_ALTA'] ?>" size='18' disabled>  
+      <td width="241"><input tipe='text' name='fecha_alta' value="<?php echo $ROW['FECHA_ALTA'] ?>" size='18' readonly="readonly">  
         
       <td width='124'>Estado cliente</td>
     <td width='156'>
-    	<select name='status'>
-
-
+    	<select name='status_cliente'>
     	<?php
     	//pre-carga el estatus del clientes
 
@@ -113,16 +109,22 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
     
   }?>
 
-    <td width='160'><select name='fiabilidad'>
-      <option value=0 <?php echo $buena;?> >Buena</option>
-      <option value=1 <?php echo $regular;?> >Regular</option>
-      <option value=2 <?php echo $mala;?> >Mala</option>
+    <td width='160'><select name='fiabilidad_cliente'>
+      <option value='Buena' <?php echo $buena;?> >Buena</option>
+      <option value='Regular' <?php echo $regular;?> >Regular</option>
+      <option value='Mala' <?php echo $mala;?> >Mala</option>
       </select></td>
+  </tr>
+  <tr>
+  	<td>Notas</td>
+  	<td colspan="5">
+  		<textarea name='notas' style="width:1245px; height:100px"><?php echo $ROW['NOTAS'] ?></textarea>
+  	</td>
   </tr>
 </table>
 <p><br>
-      <input type="button" name='actualizar' value='Actualizar' onClick="actualizar_cliente()"> 
-    <input type='button' name='eliminar' value='Eliminar' onClick="eliminar_cliente()">
+      <input type="button" name='actualizar' value='Actualizar' onClick="Validar_form_Actualizar_Cliente()"> 
+    <input type='button' name='eliminar' value='Eliminar' onClick="Eliminar_Cliente()">
   </div>
 </p>
 </form>
