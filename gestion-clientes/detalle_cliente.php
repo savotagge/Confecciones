@@ -14,6 +14,7 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" type="text/css" href="../css/style2.css"/>
       <script type="text/javascript" src="../js/functions_clientes.js"></script>
       <title>GESTION CLIENTES</title>
       <style type="text/css">
@@ -118,7 +119,7 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
   <tr>
   	<td>Notas</td>
   	<td colspan="5">
-  		<textarea name='notas' style="width:1245px; height:100px"><?php echo $ROW['NOTAS'] ?></textarea>
+  		<textarea name='notas' style="width:1032px; height:100px"><?php echo $ROW['NOTAS'] ?></textarea>
   	</td>
   </tr>
 </table>
