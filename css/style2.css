@@ -35,7 +35,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0dde0', end
 .contenedor .titulo{
     font-style:italic;
     font-size: 3.5ex;
-    color: #5c585c;
+    color: black;
     font-weight: bold;
     margin-left: 10px;
     margin-bottom: 10px;    

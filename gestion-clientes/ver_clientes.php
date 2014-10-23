@@ -1,3 +1,35 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+      <!-- <script type="text/javascript" src="js/scripts.js"></script>-->
+      <script type="text/javascript" src="../js/functions_clientes.js"></script>
+      <title>GESTION CLIENTES</title>
+      <style type="text/css">
+<!--
+.Estilo1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.Estilo2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+-->
+      </style>
+</head>
+ <body>
+      <div class="contenedor">
+         <table width=950px >
+            <tr>
+               <td>
+                  <div class="titulo Estilo3">
+                     Lista de Clientes</div><br>  
+                      </td>
+              
+            </tr>
+         </table>
+
 <?php include("../conn/conn.php");
 
 //ver datos de l base de datos
@@ -11,11 +43,12 @@ $MOSTRAR_CLIENTES="";
 //se obtiene el numero de cabeceras de columnas (campos) de la busqueda
 $NUMERO_CAMPO=mysql_num_fields($RESULT);
 $MOSTRAR_CLIENTES.="<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>";
-$MOSTRAR_CLIENTES.="<table align='center' border=1>";
+$MOSTRAR_CLIENTES.="<table align='center' border=1,5>";
 $MOSTRAR_CLIENTES.="<tr>";
 for($NC=0;$NC<$NUMERO_CAMPO;$NC++){
   $NCAMPO=mysql_field_name($RESULT,$NC);
-  $MOSTRAR_CLIENTES.="<td height='25'>";
+  $MOSTRAR_CLIENTES.="<td height='40' width='150'>";
+  $MOSTRAR_CLIENTES.="<center>";
   $MOSTRAR_CLIENTES.=$NCAMPO;
   $MOSTRAR_CLIENTES.="</td>";
   }
@@ -40,3 +73,4 @@ echo $MOSTRAR_CLIENTES;
 
 }
 ?>
+</html>

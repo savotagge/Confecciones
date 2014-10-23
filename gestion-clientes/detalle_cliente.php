@@ -119,7 +119,7 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
   <tr>
   	<td>Notas</td>
   	<td colspan="5">
-  		<textarea name='notas' style="width:1032px; height:100px"><?php echo $ROW['NOTAS'] ?></textarea>
+  		<textarea name='notas' style="width:1041px; resize:none; height:100px"><?php echo $ROW['NOTAS'] ?></textarea>
   	</td>
   </tr>
 </table>
