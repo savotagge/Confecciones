@@ -125,10 +125,19 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
 </table>
 <p><br>
       <input type="button" name='actualizar' value='Actualizar' onClick="Validar_form_Actualizar_Cliente()"> 
-    <input type='button' name='eliminar' value='Eliminar' onClick="Eliminar_Cliente()">
+      <input type='button' name='eliminar' value='Eliminar' onClick="Eliminar_Cliente()">
+   </form>   
+
+      <form action="eliminar_cliente.php" method="POST" name='formEliminarCliente'>
+      <input type="text" name="Id" value="<?php echo base64_encode($ROW['RUT_CLIENTE']) ?>" hidden onlyread>
+    </form>
+
+
+
+
   </div>
 </p>
-</form>
+
 
             </div>
                    

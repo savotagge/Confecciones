@@ -24,7 +24,7 @@ if (rut=="" && nombre=="" && direccion=="" && fono=="" && mail==""){
     document.formAgregarCliente.rut_cliente.focus()
     return "0";}
     //se valida el formato del rut para el formato 12.123.123-4
-    expr_rut = /^([0-9]{1,2}\.[1-9]{3}\.[1-9]{3}\-[0-9kK])+$/
+    expr_rut = /^([0-9]{1,2}\.[0-9]{3}\.[1-9]{3}\-[0-9kK])+$/
     if ( !expr_rut.test(rut) ){
         alert("Error: El Rut: " + rut + " es incorrecto, verifique el ejemplo.")
         document.formAgregarCliente.rut_cliente.focus()
@@ -114,5 +114,11 @@ if (nombre=="" && direccion=="" && fono=="" && mail==""){
 
 function Eliminar_Cliente(){
 
-	alert("Eliminar");
+	//se pide confirmacion antes de actualizar los datos de un cliente
+    	if(confirm('¿Esta seguro que desea eliminar al cliente?')){
+
+    		document.formEliminarCliente.submit()
+    	}else{
+    		return false;
+    	}
 }
