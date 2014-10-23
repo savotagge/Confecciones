@@ -1,0 +1,56 @@
+body {
+   background: rgba(252,247,252,1);
+background: -moz-linear-gradient(left, rgba(252,247,252,1) 0%, rgba(246,246,246,1) 47%, rgba(247,244,247,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252,247,252,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(247,244,247,1)));
+background: -webkit-linear-gradient(left, rgba(252,247,252,1) 0%, rgba(246,246,246,1) 47%, rgba(247,244,247,1) 100%);
+background: -o-linear-gradient(left, rgba(252,247,252,1) 0%, rgba(246,246,246,1) 47%, rgba(247,244,247,1) 100%);
+background: -ms-linear-gradient(left, rgba(252,247,252,1) 0%, rgba(246,246,246,1) 47%, rgba(247,244,247,1) 100%);
+background: linear-gradient(to right, rgba(252,247,252,1) 0%, rgba(246,246,246,1) 47%, rgba(247,244,247,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcf7fc', endColorstr='#f7f4f7', GradientType=1 );
+}
+ 
+ 
+.contenedor{
+    width: 1150px;
+    margin: auto;  
+    font-style:italic;
+  background: rgba(224,221,224,1);
+background: -moz-linear-gradient(left, rgba(224,221,224,1) 0%, rgba(219,219,219,1) 47%, rgba(217,213,217,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(224,221,224,1)), color-stop(47%, rgba(219,219,219,1)), color-stop(100%, rgba(217,213,217,1)));
+background: -webkit-linear-gradient(left, rgba(224,221,224,1) 0%, rgba(219,219,219,1) 47%, rgba(217,213,217,1) 100%);
+background: -o-linear-gradient(left, rgba(224,221,224,1) 0%, rgba(219,219,219,1) 47%, rgba(217,213,217,1) 100%);
+background: -ms-linear-gradient(left, rgba(224,221,224,1) 0%, rgba(219,219,219,1) 47%, rgba(217,213,217,1) 100%);
+background: linear-gradient(to right, rgba(224,221,224,1) 0%, rgba(219,219,219,1) 47%, rgba(217,213,217,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0dde0', endColorstr='#d9d5d9', GradientType=1 );
+
+    background-position:bottom;
+    font-size: 1.0ex;
+    color: #5c585c;
+    padding: 30px 50px 50px 50px;
+    border-radius: 10px;
+    
+   
+}
+
+.contenedor .titulo{
+    font-style:italic;
+    font-size: 3.5ex;
+    color: #5c585c;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 10px;    
+}
+table {
+    font-style:italic;
+    color: #5c585c;
+    
+    
+    border-collapse:collapse;
+    
+
+button{
+    font-style:italic;
+    font-size: 3.5ex;
+    color: #5c585c;
+
+}
