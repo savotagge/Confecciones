@@ -58,14 +58,14 @@ while($ROW=mysql_fetch_array($RESULT)){
   $ID=base64_encode($ROW[0]);
   $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'><a href='detalle_cliente.php?id=".$ID."'><center>".$ROW[0]."</center></a></td>";
   $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'>".$ROW[1]."</td>";
-  $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'>".$ROW[2]."</td>";
+  $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'><center>".$ROW[2]."</center></td>";
   //como la base de datos carece de una tabla de estados se asigna aqui el valor del estado y se muestra en pantalla
   if($ROW[3]==0){
     $ESTADO="Activo";
   }else{
     $ESTADO="Inactivo";
   }
-  $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'>".$ESTADO."</td>";
+  $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'><center>".$ESTADO."</center></td>";
   $MOSTRAR_CLIENTES.="</tr>";
 }
 $MOSTRAR_CLIENTES.="</table></center><br><br>";
