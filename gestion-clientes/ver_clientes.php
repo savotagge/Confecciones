@@ -37,7 +37,7 @@ $RESULT=mysql_query("SELECT RUT_CLIENTE as RUT, NOMBRE_CLIENTE as NOMBRE, FIABIL
 //se obtiene el numero de resultados
 $NU=mysql_num_rows($RESULT);
 if($NU==0){ 
-echo 'No existen clientes';
+echo '<center class="titulo">No existen clientes</center>';
 }else{
 $MOSTRAR_CLIENTES="";
 //se obtiene el numero de cabeceras de columnas (campos) de la busqueda
@@ -56,19 +56,21 @@ $MOSTRAR_CLIENTES.="</tr>";
 while($ROW=mysql_fetch_array($RESULT)){
   $MOSTRAR_CLIENTES.="<tr>";
   $ID=base64_encode($ROW[0]);
-  $MOSTRAR_CLIENTES.="<td><a href='detalle_cliente.php?id=".$ID."'>".$ROW[0]."</a></td>";
-  $MOSTRAR_CLIENTES.="<td>".$ROW[1]."</td>";
-  $MOSTRAR_CLIENTES.="<td>".$ROW[2]."</td>";
+  $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'><a href='detalle_cliente.php?id=".$ID."'><center>".$ROW[0]."</center></a></td>";
+  $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'>".$ROW[1]."</td>";
+  $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'>".$ROW[2]."</td>";
   //como la base de datos carece de una tabla de estados se asigna aqui el valor del estado y se muestra en pantalla
   if($ROW[3]==0){
     $ESTADO="Activo";
   }else{
     $ESTADO="Inactivo";
   }
-  $MOSTRAR_CLIENTES.="<td>".$ESTADO."</td>";
+  $MOSTRAR_CLIENTES.="<td bgcolor='#FFFFFF'>".$ESTADO."</td>";
   $MOSTRAR_CLIENTES.="</tr>";
 }
-$MOSTRAR_CLIENTES.="</table></center>";
+$MOSTRAR_CLIENTES.="</table></center><br><br>";
+$MOSTRAR_CLIENTES.="<div align='center' class='titulo'><input type='button' name='crear_cliente' value='Agregar cliente' onClick=window.location.href='crear_cliente.html'> ";
+$MOSTRAR_CLIENTES.='<a href="./">Atras</a></div>';
 echo $MOSTRAR_CLIENTES;
 
 }

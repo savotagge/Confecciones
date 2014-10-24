@@ -123,9 +123,10 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
   	</td>
   </tr>
 </table>
-<p><br>
+<p><br><div class="titulo" align="">
       <input type="button" name='actualizar' value='Actualizar' onClick="Validar_form_Actualizar_Cliente()"> 
       <input type='button' name='eliminar' value='Eliminar' onClick="Eliminar_Cliente()">
+      <a href="ver_clientes.php">Atras</a></div>
    </form>   
 
       <form action="eliminar_cliente.php" method="POST" name='formEliminarCliente'>

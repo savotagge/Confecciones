@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+	<title>Notificación</title>
+</head>
+<body >
 <?php include("../conn/conn.php");
 //se revisa que las variables han sido declaradas
 
@@ -19,8 +27,13 @@ $NOTAS=$_POST['notas'];
 
 $RESULT=mysql_query(("UPDATE CLIENTES SET NOMBRE_CLIENTE='$NOMBRE_CLIENTE',DIRECCION_CLIENTE='$DIRECCION_CLIENTE',FONO_CLIENTE='$FONO_CLIENTE',MAIL_CLIENTE='$MAIL_CLIENTE',FIABILIDAD_CLIENTE='$FIABILIDAD',ACTIVO='$ACTIVO',NOTAS='$NOTAS' WHERE RUT_CLIENTE like '$RUT_CLIENTE'"),$link);
 
-echo "Datos actualizados correctamente!";
+echo '<div class="contenedor"><center class="titulo">Datos actualizados correctamente</center><br>';
+echo '<center class="titulo"><a href="javascript:history.back()">Regresar</a></center></div>';
+
 }else{
 
 	echo "Acceso no autorizado";
 }
+?>
+</body>
+</html>
