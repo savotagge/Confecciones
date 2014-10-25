@@ -153,11 +153,11 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
 
 
 	}else{
-		echo "Acceso no autorizado"; //si la variable estaba declarada y venia vacia se muestra una advertencia
+		echo '<div class="contenedor"><center class="titulo">Acceso no autorizado!</center></div><br>'; //si la variable estaba declarada y venia vacia se muestra una advertencia
 		}
 }else{
 
-	echo "Acceso no autorizado"; //si la variable nunca se declaro se muestra una advertencia
+	echo '<div class="contenedor"><center class="titulo">Acceso no autorizado!</center></div><br>'; //si la variable nunca se declaro se muestra una advertencia
 }
 
 ?>
