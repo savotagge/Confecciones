@@ -38,7 +38,10 @@ $RESULT=mysql_query(("INSERT INTO `CONFECCIONES`.`CLIENTES` (`RUT_CLIENTE`, `NOM
 echo '<div class="contenedor"><center class="titulo">Cliente creado correctamente</center><br>';
 echo '<center class="titulo"><a href="ver_clientes.php">Atras</a></center></div>';
 }else{
+	//accesos no autizados
 
-	echo "Acceso no autorizado";
+	echo '<div class="contenedor"><center class="titulo"><font color="red">Acceso no autorizado!</font></center></div><br>';
 }
 ?>
+</body>
+</html>

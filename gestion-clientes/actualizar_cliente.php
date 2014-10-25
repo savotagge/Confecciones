@@ -30,9 +30,10 @@ $RESULT=mysql_query(("UPDATE CLIENTES SET NOMBRE_CLIENTE='$NOMBRE_CLIENTE',DIREC
 echo '<div class="contenedor"><center class="titulo">Datos actualizados correctamente</center><br>';
 echo '<center class="titulo"><a href="javascript:history.back()">Regresar</a></center></div>';
 
-}else{
+}else{ //accesos no autizados
 
-	echo "Acceso no autorizado";
+	
+	echo '<div class="contenedor"><center class="titulo"><font color="red">Acceso no autorizado!</font></center></div><br>';
 }
 ?>
 </body>

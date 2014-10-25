@@ -1,16 +1,3 @@
-<?php include("../conn/conn.php");
-//se recibe la variable enviada desde el formulario
-if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
-
-	if(!empty($_GET['id'])){ //se revisa si la variable contiene datos
-
-	$RUT=base64_decode($_GET['id']); //se decodifica la variable
-
-	//Se va a buscar a la base de datos los datos del cliente seleccionado
-    $RESULT=mysql_query("SELECT * from CLIENTES where RUT_CLIENTE like '$RUT'",$link);
-    while($ROW=mysql_fetch_array($RESULT)){
-    
-?>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,6 +18,20 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
       </style>
 </head>
    <body>
+<?php include("../conn/conn.php");
+//se recibe la variable enviada desde el formulario
+if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
+
+	if(!empty($_GET['id'])){ //se revisa si la variable contiene datos
+
+	$RUT=base64_decode($_GET['id']); //se decodifica la variable
+
+	//Se va a buscar a la base de datos los datos del cliente seleccionado
+    $RESULT=mysql_query("SELECT * from CLIENTES where RUT_CLIENTE like '$RUT'",$link);
+    while($ROW=mysql_fetch_array($RESULT)){
+    
+?>
+
       <div class="contenedor">
          <table width=950px >
             <tr>
@@ -144,20 +145,22 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
                    
          </div>
       </div>
+      <?php
+}
+
+
+	}else{ //accesos no autizados
+		echo '<link rel="stylesheet" type="text/css" href="../css/style2.css"/>';
+		echo '<div class="contenedor"><center class="titulo"><font color="red">Acceso no autorizado!</font></center></div><br>'; //si la variable estaba declarada y venia vacia se muestra una advertencia
+		}
+}else{ //accesos no autizados
+	echo '<link rel="stylesheet" type="text/css" href="../css/style2.css"/>';
+	echo '<div class="contenedor"><center class="titulo"><font color="red">Acceso no autorizado!</font></center></div><br>'; //si la variable nunca se declaro se muestra una advertencia
+}
+
+?>
    </body>
 </html>
 
 
-<?php
-}
 
-
-	}else{
-		echo '<div class="contenedor"><center class="titulo">Acceso no autorizado!</center></div><br>'; //si la variable estaba declarada y venia vacia se muestra una advertencia
-		}
-}else{
-
-	echo '<div class="contenedor"><center class="titulo">Acceso no autorizado!</center></div><br>'; //si la variable nunca se declaro se muestra una advertencia
-}
-
-?>

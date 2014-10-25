@@ -23,8 +23,9 @@ $RESULT=mysql_query(("DELETE FROM CLIENTES WHERE RUT_CLIENTE like '$RUT_CLIENTE'
 echo '<div class="contenedor"><center class="titulo">Eliminado correctamente</center><br>';
 echo '<center class="titulo"><a href="ver_clientes.php">Regresar</a></center></div>';
 }else{
-
-	echo "Acceso no autorizado";
+	//accesos no autizados
+	
+	echo '<div class="contenedor"><center class="titulo"><font color="red">Acceso no autorizado!</font></center></div><br>';
 }
 ?>
 
