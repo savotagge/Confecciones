@@ -53,18 +53,18 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
     <td width="44%"><input tipe='text' name='rut_cliente' value="<?php echo $ROW['RUT_CLIENTE'] ?>" size='35' readonly="readonly">
     </td>
     <td width="9%">Telefono</td>
-    <td width="36%"><input tipe='text' name='fono_cliente' value="<?php echo $ROW['FONO_CLIENTE'] ?>" size='30'>
+    <td width="36%"><input tipe='text' name='fono_cliente' maxlength="12" value="<?php echo $ROW['FONO_CLIENTE'] ?>" size='30'>
         <span class="ejemplos"> (09 12345678)</span></td>
   </tr>
   <tr>
     <td height="42">Nombre</td>
-    <td><input tipe='text' name='nombre_cliente' value="<?php echo $ROW['NOMBRE_CLIENTE'] ?>" size='65'></td>
+    <td><input tipe='text' name='nombre_cliente' maxlength="60" value="<?php echo $ROW['NOMBRE_CLIENTE'] ?>" size='65'></td>
 	  <td width="9%">Mail</td>
-      <td width="36%"><input tipe='text' name='mail_cliente' value="<?php echo $ROW['MAIL_CLIENTE'] ?>" size='50'></td>
+      <td width="36%"><input tipe='text' name='mail_cliente' maxlength="50" value="<?php echo $ROW['MAIL_CLIENTE'] ?>" size='50'></td>
   </tr>
   <tr>
     <td height="42">Direccion</td>
-    <td colspan='3'><input tipe='text' name='direccion_cliente' value="<?php echo $ROW['DIRECCION_CLIENTE'] ?>" size='75'>
+    <td colspan='3'><input tipe='text' name='direccion_cliente' maxlength="80" value="<?php echo $ROW['DIRECCION_CLIENTE'] ?>" size='75'>
         <span class="ejemplos"> (Villa La Paz, Pasaje b, casa #123, Curico.)</span></td>
   </tr>
 </table>
