@@ -1,0 +1,36 @@
+b@charset "utf-8";/
+
+
+*{
+  margin:0;
+  pading:0;
+}
+
+
+body {
+color:#FFF;
+font-family:Arial, Helvetica, sans-serif;
+font-size:2em;
+}
+
+div{
+ color:#F60;
+ margin:0.25em auto;
+ text-align: center;
+ text-shadow:5px 5px 10px rgba(255,255,255,0.5);
+ }
+ 
+nav{
+background:#1E6381;
+border-radius:0.5em;
+margin:0.5em auto;
+max-width:960px;
+padding:0.25em;
+text-alingn:center;
+}
+
+
+ 
+}
+
+
