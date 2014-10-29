@@ -16,6 +16,32 @@
 	font-weight: bold;
 }
       </style>
+
+
+      <script language="javascript"> // Valida solo numeros en campo de telefono
+function validarNro(e) {
+var key;
+if(window.event) // IE
+{
+key = e.keyCode;
+}
+else if(e.which) 
+{
+key = e.which;
+}
+if (key < 48 || key > 57)
+{
+if(key == 46 || key == 8 ) // Detectar . (punto) y backspace (retroceso)
+    { return true; }
+else 
+    { return false; }
+}
+return true;
+}
+</script>
+
+
+
 </head>
    <body>
 <?php include("../conn/conn.php");
@@ -53,8 +79,8 @@ if(isset($_GET['id'])){ //se revisa si la variable ha sido declarada
     <td width="44%"><input tipe='text' name='rut_cliente' value="<?php echo $ROW['RUT_CLIENTE'] ?>" size='35' readonly="readonly">
     </td>
     <td width="9%">Telefono</td>
-    <td width="36%"><input tipe='text' name='fono_cliente' maxlength="12" value="<?php echo $ROW['FONO_CLIENTE'] ?>" size='30'>
-        <span class="ejemplos"> (09 12345678)</span></td>
+    <td width="36%"><input tipe='text' onkeypress="javascript:return validarNro(event)" name='fono_cliente'  maxlength="12" value="<?php echo $ROW['FONO_CLIENTE'] ?>" size='30'>
+        <span class="ejemplos"> (92345678)</span></td>
   </tr>
   <tr>
     <td height="42">Nombre</td>
