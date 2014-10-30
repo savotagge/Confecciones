@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <link rel="stylesheet" type="text/css" href="../css/style2.css"/>
-    </head>
-    <body>
 <?php 
 
 include("../conn/conn.php");
@@ -22,5 +16,3 @@ $NOMBRE=$row[NOMBRE_CLIENTE];
 header("Location: pedido.php?rut=$RUT&nombre=$NOMBRE");
 }
 ?>
-</body>
-</html>

@@ -1,0 +1,16 @@
+<?php include("../conn/conn.php");
+
+$RUT=$_GET['rut'];
+
+$sql=mysql_query("SELECT * FROM CLIENTES WHERE RUT_CLIENTE='$RUT'",$link);
+$row=mysql_fetch_array($sql);
+
+if($row == 0){
+echo "El cliente ingresado no existe en nuestros registros";
+}else{
+
+header("Location:pedido.php");
+
+}
+
+?>

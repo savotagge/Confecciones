@@ -1,0 +1,8 @@
+<?php
+include("../conn/conn.php");
+
+$RUT=$_POST['rut'];
+
+$result=mysql_query("INSERT INTO CLIENTES (`RUT_CLIENTE`) VALUES('$RUT')", $link);
+echo "Hecho";
+?>

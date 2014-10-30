@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+    </head>
+    <body>
+
+        <?php include("../conn/conn.php");
+
+        $NPEDIDO=$_GET['nPedido'];
+        $RUT=$_GET['rut'];
+        $FECHAP=$_GET['fechaPedido'];
+        $FECHAL=$_GET['fechaLimite'];
+        $PAGO=$_GET['pago'];
+        $OSB=$_GET['obseravacion'];
+
+        echo  "<form name='formCanPedido' method='GET' action='cancelarPedido.php'>";
+        echo "Pedido:".' '.$NPEDIDO;
+        echo "<br><input type='text' name='nPedido' value='".$NPEDIDO."' style='visibility:hidden'><br>";
+
+        $result=mysql_query("SELECT * FROM DETALLE_PEDIDO WHERE COD_PEDIDO='$NPEDIDO'",$link);
+        $numero_campos=mysql_num_fields($result);
+
+        $suma=mysql_query("SELECT * FROM DETALLE_PEDIDO WHERE COD_PEDIDO='$NPEDIDO'",$link);
+
+        $TOTAL=0;
+        while($row=mysql_fetch_array($suma)){
+        $TOTAL=$TOTAL + $row[SUB_TOTAL];
+        }
+
+        $mostrar="";
+        $mostrar.="<table border='2'>";
+        $mostrar.="<tr>";
+        $mostrar.="<td>Fila</td>";
+        $mostrar.="<td>";
+        $mostrar.='Cod. articulo';
+        $mostrar.="   </td>";
+        $mostrar.="<td>";
+        $mostrar.='Cantidad';
+        $mostrar.="</td>";
+        $mostrar.="<td>";
+        $mostrar.='Valor unit.';
+        $mostrar.="</td>";
+        $mostrar.="<td>";
+        $mostrar.='Sub total';
+        $mostrar.="</td>";
+        $mostrar.="<td>Eliminar</td>";
+        $mostrar.="</tr>";
+
+
+        while($row=mysql_fetch_array($result))
+        {
+        $mostrar.="<tr>";
+
+        for($nc=0;$nc<($numero_campos-1);$nc++)
+        {
+        $ncampo=mysql_field_name($result,$nc);
+        $mostrar.="<td>$row[$ncampo]</td>";
+        }
+        $mostrar.="<td style='border:0'><a href='eliminarArt.php?id=$row[0]'><img src='../images/cruz.png' width='25'></a></td>";
+        $mostrar.="</tr>";
+        }
+        $mostrar.="<tr>";
+        $mostrar.="<td style='border:0'></td>";
+        $mostrar.="<td style='border:0'></td>";
+        $mostrar.="<td style='border:0'></td>";
+        $mostrar.="<td style='border:0'>Total</td>";
+        $mostrar.="<td>$TOTAL</td>";
+        $mostrar.="</tr></table><br>";
+        echo $mostrar;
+
+        echo "<table><tr><td><input type='submit' value='Cancelar'></td><td></td><td><a href='confirmarPedido.php?pedido=$NPEDIDO&total=$TOTAL&obs=$OSB&rut=$RUT&fped=$FECHAP&flim=$FECHAL&pago=$PAGO' style='text-decoration:none'><input type='button' name='confirmar' value='Confirmar'></a></td></tr></table></form>";
+
+        ?>
+    </body>
+</html>
+
+
